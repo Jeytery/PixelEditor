@@ -2,39 +2,53 @@
 //  EditorToolsView.swift
 //  PixelEditor
 //
-//  Created by Jeytery on 14.12.2021.
+//  Created by BarsO_o on 14.12.2021.
 //
 
 import UIKit
 
 protocol EditorToolsViewDelegate: AnyObject {
-    func editorToolsViewDidenterForward()
-    func editorToolsViewDidEnterBack()
+    func editorToolViewDidTapReload()
+    func editorToolViewDidTapColor()
+    
+    func editorToolViewShowGrid()
+    func editorToolViewHideGrid()
 }
 
 class EditorToolsView: UIView {
     
     weak var delegate: EditorToolsViewDelegate?
     
-    var points: Array<CGPoint> {
-        return []
-    }
-    
     private let horizontalStackView = StackListView(axis: .vertical)
     
+    private var isGridActive: Bool = true
+    
+    //stacks
     private let additionalStackView = StackListView(axis: .horizontal)
-    private let figureStackView = StackListView(axis: .horizontal)
+    private let figureStackView = FigureToolsView()
     private let navigationStackView = StackListView(axis: .horizontal)
     
+    //simple elements
     private let slider = UISlider()
+    private let sizeLevelLabel = UILabel()
+    private let colorButton = ToolView(icon: Icons.lensFilled, size: 30)
+    private let gridButton = ToolView(icon: Icons.activeGrid, size: 30)
+    
+    private var getFigurePoints: (Int, CGPoint) -> Array<CGPoint> = { _, _ in return [] }
     
     init() {
         super.init(frame: .zero)
         configureAdditionalStackView()
-        configureFigureStackView()
         configureNavigationStackView()
         configureHorizontalStackView()
+        
+        configureSlider()
+        
         backgroundColor = Colors.lightGray
+        figureStackView.delegate = self
+        
+        figureStackView.squareButtonDidTap()
+        setActiveGridButton()
     }
     
     required init?(coder: NSCoder) {
@@ -43,43 +57,6 @@ class EditorToolsView: UIView {
 }
 
 extension EditorToolsView {
-    private func configureHorizontalStackView() {
-        addSubview(horizontalStackView)
-        horizontalStackView.translatesAutoresizingMaskIntoConstraints = false
-        horizontalStackView.topAnchor.constraint(equalTo: topAnchor, constant: 15).isActive = true
-        horizontalStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15).isActive = true
-        horizontalStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 15).isActive = true
-        horizontalStackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -15).isActive = true
-        
-        horizontalStackView.addView(additionalStackView, size: 80)
-        horizontalStackView.addViews([figureStackView, navigationStackView], size: 110)
-    }
-    
-    private func configureFigureStackView() {
-        let squareButton = ToolView(icon: Icons.square, size: 20)
-        let circleButton = ToolView(icon: Icons.circle, size: 20)
-        let polygonButton = ToolView(icon: Icons.polygon, size: 20)
-        
-        squareButton.didTapView = squareButtonDidTap
-        circleButton.didTapView = circleButtonDidTap
-        polygonButton.didTapView = polygonButtonDidTap
-        
-        squareButton.isSelected = true
-        
-        let figureButtons = [squareButton, circleButton, polygonButton]
-        
-        figureStackView.addViews(figureButtons, size: 110)
-    }
-    
-    private func configureNavigationStackView() {
-        let nextButton = ToolView(icon: Icons.next, size: 30)
-        let returnButton = ToolView(icon: Icons.back, size: 30)
-        
-        let figureButtons = [returnButton,nextButton]
-        
-        navigationStackView.addViews(figureButtons, size: 110)
-    }
-    
     private func SliderView() -> UIView {
         let v = UIView()
         v.backgroundColor = .white
@@ -93,28 +70,114 @@ extension EditorToolsView {
         return v
     }
     
-    private func configureAdditionalStackView() {
-        let colorButton = ToolView(icon: Icons.lensFilled, size: 30)
-        let sliderView = SliderView()
+    private func SizeLevelView() -> UIView {
+        let v = UIView()
+        v.backgroundColor = .white
+        v.layer.cornerRadius = 15
         
-        additionalStackView.addView(colorButton, size: 110)
-        additionalStackView.addView(sliderView, size: 210)
+        sizeLevelLabel.textColor = .black
+        sizeLevelLabel.text = "1"
+        
+        v.addSubview(sizeLevelLabel)
+        sizeLevelLabel.translatesAutoresizingMaskIntoConstraints = false
+        sizeLevelLabel.font = .systemFont(ofSize: 20, weight: .semibold)
+        sizeLevelLabel.centerYAnchor.constraint(equalTo: v.centerYAnchor).isActive = true
+        sizeLevelLabel.centerXAnchor.constraint(equalTo: v.centerXAnchor).isActive = true
+        return v
     }
 }
 
-//MARK: - figures stackView
 extension EditorToolsView {
-    
-    
-    private func squareButtonDidTap() {
-        
+    @objc func sliderDidChangeValue() {
+        sizeLevelLabel.text = String(Int(slider.value))
     }
     
-    private func circleButtonDidTap() {
-        
+    private func setActiveGridButton() {
+        gridButton.setIcon(Icons.activeGrid)
+        gridButton.setBorder(width: 3, color: Colors.blue)
+        delegate?.editorToolViewShowGrid()
     }
     
-    private func polygonButtonDidTap() {
+    private func setUnactiveGridButton() {
+        gridButton.setIcon(Icons.unactiveGrid)
+        gridButton.setBorder(width: 0, color: Colors.blue)
+        delegate?.editorToolViewHideGrid()
+    }
+    
+    private func configureSlider() {
+        slider.maximumValue = 15
+        slider.minimumValue = 1
+        slider.addTarget(self, action: #selector(sliderDidChangeValue), for: .valueChanged)
+    }
+    
+    private func configureHorizontalStackView() {
+        addSubview(horizontalStackView)
+        horizontalStackView.translatesAutoresizingMaskIntoConstraints = false
+        horizontalStackView.topAnchor.constraint(equalTo: topAnchor, constant: 15).isActive = true
+        horizontalStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15).isActive = true
+        horizontalStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 15).isActive = true
+        horizontalStackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -15).isActive = true
         
+        horizontalStackView.addView(additionalStackView, size: 80)
+        horizontalStackView.addView(figureStackView, size: 110)
+        horizontalStackView.addView(navigationStackView, size: 90)        
+    }
+    
+    private func configureNavigationStackView() {
+        let reloadButton = ToolView(icon: Icons.reload, size: CGSize(width: 25, height: 30))
+        
+        reloadButton.didTapView = {
+            [unowned self] in
+            delegate?.editorToolViewDidTapReload()
+        }
+        
+        gridButton.didTapView = {
+            [unowned self] in
+            isGridActive = !isGridActive
+            if isGridActive == true {
+                setActiveGridButton()
+            }
+            else {
+                setUnactiveGridButton()
+            }
+        }
+        
+        navigationStackView.addView(reloadButton, size: 110)
+        navigationStackView.addView(gridButton, size: 110)
+    }
+    
+    private func configureAdditionalStackView() {
+        
+        let sliderView = SliderView()
+        let sizeLevelView = SizeLevelView()
+        
+        colorButton.didTapView = {
+            [unowned self] in
+            delegate?.editorToolViewDidTapColor()
+        }
+        
+        additionalStackView.addView(colorButton, size: 110)
+        additionalStackView.addView(sliderView, size: 210)
+        additionalStackView.addView(sizeLevelView, size: 80)
     }
 }
+
+//MARK: - [d] FigureStackView
+extension EditorToolsView: FigureToolsViewDelegate {
+    func figureToolsView(_ view: UIView, didChoose figure: Drawable) {
+        getFigurePoints = figure.getPoints
+    }
+}
+
+//MARK: - public
+extension EditorToolsView {
+    func getPoints(on point: CGPoint) -> Array<CGPoint> {
+        let size = Int(slider.value)
+        return getFigurePoints(size, point)
+    }
+    
+    func setColorForColorButton(_ color: UIColor) {
+        colorButton.setBorder(width: 3, color: color)
+    }
+}
+

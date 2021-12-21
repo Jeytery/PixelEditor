@@ -3,27 +3,83 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E59ECA82769286900A6A7CA /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E59ECA72769286900A6A7CA /* ColorPickerViewController.swift */; };
+		3E59ECAA276928D200A6A7CA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E59ECA9276928D200A6A7CA /* Extensions.swift */; };
+		3E5A47C9276FBF310078567E /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A47C8276FBF310078567E /* LoadingState.swift */; };
+		3E907FE227723ED500CFC1AA /* AddArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E907FE127723ED500CFC1AA /* AddArtViewController.swift */; };
+		3E907FE4277242CD00CFC1AA /* BackNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E907FE3277242CD00CFC1AA /* BackNavigationController.swift */; };
 		3EAB13D52768BB140042E829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB13D42768BB140042E829 /* AppDelegate.swift */; };
-		3EAB13D72768BB140042E829 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB13D62768BB140042E829 /* SceneDelegate.swift */; };
-		3EAB13D92768BB140042E829 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB13D82768BB140042E829 /* ViewController.swift */; };
-		3EAB13DC2768BB140042E829 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB13DA2768BB140042E829 /* Main.storyboard */; };
 		3EAB13DE2768BB150042E829 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB13DD2768BB150042E829 /* Assets.xcassets */; };
 		3EAB13E12768BB150042E829 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EAB13DF2768BB150042E829 /* LaunchScreen.storyboard */; };
+		3EAB13E92768BD260042E829 /* ArtsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB13E82768BD260042E829 /* ArtsViewController.swift */; };
+		3EAB13F52768BE2E0042E829 /* ArtsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB13F42768BE2E0042E829 /* ArtsCollectionView.swift */; };
+		3EAB13F92768C0BA0042E829 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB13F82768C0BA0042E829 /* SettingsViewController.swift */; };
+		3EAB13FB2768C4540042E829 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB13FA2768C4540042E829 /* EditorViewController.swift */; };
+		3EAB13FD2768C46D0042E829 /* Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB13FC2768C46D0042E829 /* Art.swift */; };
+		3EAB13FF2768C5660042E829 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB13FE2768C5660042E829 /* CanvasView.swift */; };
+		3EAB14012768D4630042E829 /* StackListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB14002768D4630042E829 /* StackListView.swift */; };
+		3EAB14032768D52B0042E829 /* EditorToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB14022768D52B0042E829 /* EditorToolsView.swift */; };
+		3EAB14052768D5960042E829 /* ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB14042768D5960042E829 /* ToolView.swift */; };
+		3EAB14072768D6D50042E829 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB14062768D6D50042E829 /* Colors.swift */; };
+		3EAB14092768D6D90042E829 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB14082768D6D90042E829 /* Design.swift */; };
+		3EAB140B2768D6E20042E829 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB140A2768D6E20042E829 /* Icons.swift */; };
+		3EAB14142768E6170042E829 /* FigureToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB14132768E6170042E829 /* FigureToolsView.swift */; };
+		3EAB14172768EE520042E829 /* Figures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB14162768EE520042E829 /* Figures.swift */; };
+		3EE64808276DFC3100BCF868 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE64807276DFC3100BCF868 /* API.swift */; };
+		3EE6480A276DFC9E00BCF868 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE64809276DFC9E00BCF868 /* User.swift */; };
+		3EE6480C276E044A00BCF868 /* AutorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE6480B276E044A00BCF868 /* AutorizationViewController.swift */; };
+		3EE6480E276E04A500BCF868 /* DescTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE6480D276E04A500BCF868 /* DescTextFieldView.swift */; };
+		3EE64810276E04D100BCF868 /* StateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE6480F276E04D100BCF868 /* StateTextField.swift */; };
+		3EE64813276E055A00BCF868 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE64812276E055A00BCF868 /* UserManager.swift */; };
+		3EE64815276E0C9E00BCF868 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EE64814276E0C9E00BCF868 /* GoogleService-Info.plist */; };
+		3EE64819276F5E8000BCF868 /* ArtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE64818276F5E8000BCF868 /* ArtCell.swift */; };
+		3EE6481B276F5F2500BCF868 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE6481A276F5F2500BCF868 /* Typealias.swift */; };
+		3EE6481D276F60DD00BCF868 /* ArtTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE6481C276F60DD00BCF868 /* ArtTableView.swift */; };
+		BEEE9CDAB413B08276955A6B /* Pods_PixelEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254F760A6D0B03208B8AC025 /* Pods_PixelEditor.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		254F760A6D0B03208B8AC025 /* Pods_PixelEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PixelEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E59ECA72769286900A6A7CA /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
+		3E59ECA9276928D200A6A7CA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3E5A47C8276FBF310078567E /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
+		3E907FE127723ED500CFC1AA /* AddArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArtViewController.swift; sourceTree = "<group>"; };
+		3E907FE3277242CD00CFC1AA /* BackNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackNavigationController.swift; sourceTree = "<group>"; };
 		3EAB13D12768BB140042E829 /* PixelEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixelEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EAB13D42768BB140042E829 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3EAB13D62768BB140042E829 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3EAB13D82768BB140042E829 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3EAB13DB2768BB140042E829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3EAB13DD2768BB150042E829 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EAB13E02768BB150042E829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3EAB13E22768BB150042E829 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EAB13E82768BD260042E829 /* ArtsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtsViewController.swift; sourceTree = "<group>"; };
+		3EAB13F42768BE2E0042E829 /* ArtsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtsCollectionView.swift; sourceTree = "<group>"; };
+		3EAB13F82768C0BA0042E829 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3EAB13FA2768C4540042E829 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
+		3EAB13FC2768C46D0042E829 /* Art.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Art.swift; sourceTree = "<group>"; };
+		3EAB13FE2768C5660042E829 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		3EAB14002768D4630042E829 /* StackListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackListView.swift; sourceTree = "<group>"; };
+		3EAB14022768D52B0042E829 /* EditorToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorToolsView.swift; sourceTree = "<group>"; };
+		3EAB14042768D5960042E829 /* ToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolView.swift; sourceTree = "<group>"; };
+		3EAB14062768D6D50042E829 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3EAB14082768D6D90042E829 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
+		3EAB140A2768D6E20042E829 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		3EAB14132768E6170042E829 /* FigureToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureToolsView.swift; sourceTree = "<group>"; };
+		3EAB14162768EE520042E829 /* Figures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Figures.swift; sourceTree = "<group>"; };
+		3EE64807276DFC3100BCF868 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		3EE64809276DFC9E00BCF868 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3EE6480B276E044A00BCF868 /* AutorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutorizationViewController.swift; sourceTree = "<group>"; };
+		3EE6480D276E04A500BCF868 /* DescTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescTextFieldView.swift; sourceTree = "<group>"; };
+		3EE6480F276E04D100BCF868 /* StateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTextField.swift; sourceTree = "<group>"; };
+		3EE64812276E055A00BCF868 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		3EE64814276E0C9E00BCF868 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3EE64818276F5E8000BCF868 /* ArtCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtCell.swift; sourceTree = "<group>"; };
+		3EE6481A276F5F2500BCF868 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
+		3EE6481C276F60DD00BCF868 /* ArtTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtTableView.swift; sourceTree = "<group>"; };
+		BEF95ADD48BB0D1CDD88CF24 /* Pods-PixelEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixelEditor.release.xcconfig"; path = "Target Support Files/Pods-PixelEditor/Pods-PixelEditor.release.xcconfig"; sourceTree = "<group>"; };
+		C217ECCFF9E75B381CD76C04 /* Pods-PixelEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PixelEditor.debug.xcconfig"; path = "Target Support Files/Pods-PixelEditor/Pods-PixelEditor.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEEE9CDAB413B08276955A6B /* Pods_PixelEditor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +99,8 @@
 			children = (
 				3EAB13D32768BB140042E829 /* PixelEditor */,
 				3EAB13D22768BB140042E829 /* Products */,
+				BA18457F3263E1A3D73620C3 /* Pods */,
+				4448F4B1FBE373008CC93AE6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +115,114 @@
 		3EAB13D32768BB140042E829 /* PixelEditor */ = {
 			isa = PBXGroup;
 			children = (
+				3EE64811276E054D00BCF868 /* Networking */,
+				3EAB13F12768BDBA0042E829 /* Model */,
+				3EAB13F02768BDB00042E829 /* Utils */,
+				3EAB13EC2768BD670042E829 /* Interface */,
+				3EAB13EB2768BD600042E829 /* ViewControllers */,
+				3EAB13EA2768BD5C0042E829 /* View */,
 				3EAB13D42768BB140042E829 /* AppDelegate.swift */,
-				3EAB13D62768BB140042E829 /* SceneDelegate.swift */,
-				3EAB13D82768BB140042E829 /* ViewController.swift */,
-				3EAB13DA2768BB140042E829 /* Main.storyboard */,
 				3EAB13DD2768BB150042E829 /* Assets.xcassets */,
 				3EAB13DF2768BB150042E829 /* LaunchScreen.storyboard */,
 				3EAB13E22768BB150042E829 /* Info.plist */,
+				3EE64814276E0C9E00BCF868 /* GoogleService-Info.plist */,
 			);
 			path = PixelEditor;
+			sourceTree = "<group>";
+		};
+		3EAB13EA2768BD5C0042E829 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3EAB14152768E68D0042E829 /* Editor */,
+				3EAB13F42768BE2E0042E829 /* ArtsCollectionView.swift */,
+				3EAB14002768D4630042E829 /* StackListView.swift */,
+				3EAB14042768D5960042E829 /* ToolView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3EAB13EB2768BD600042E829 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3EAB13E82768BD260042E829 /* ArtsViewController.swift */,
+				3EAB13F82768C0BA0042E829 /* SettingsViewController.swift */,
+				3EAB13FA2768C4540042E829 /* EditorViewController.swift */,
+				3E59ECA72769286900A6A7CA /* ColorPickerViewController.swift */,
+				3EE6480B276E044A00BCF868 /* AutorizationViewController.swift */,
+				3E907FE127723ED500CFC1AA /* AddArtViewController.swift */,
+				3E907FE3277242CD00CFC1AA /* BackNavigationController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3EAB13EC2768BD670042E829 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				3EAB14062768D6D50042E829 /* Colors.swift */,
+				3EAB14082768D6D90042E829 /* Design.swift */,
+				3EAB140A2768D6E20042E829 /* Icons.swift */,
+				3EE6480D276E04A500BCF868 /* DescTextFieldView.swift */,
+				3EE6480F276E04D100BCF868 /* StateTextField.swift */,
+				3EE6481C276F60DD00BCF868 /* ArtTableView.swift */,
+				3EE64818276F5E8000BCF868 /* ArtCell.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		3EAB13F02768BDB00042E829 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3E59ECA9276928D200A6A7CA /* Extensions.swift */,
+				3EE6481A276F5F2500BCF868 /* Typealias.swift */,
+				3E5A47C8276FBF310078567E /* LoadingState.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3EAB13F12768BDBA0042E829 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3EAB13FC2768C46D0042E829 /* Art.swift */,
+				3EAB14162768EE520042E829 /* Figures.swift */,
+				3EE64809276DFC9E00BCF868 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3EAB14152768E68D0042E829 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				3EAB13FE2768C5660042E829 /* CanvasView.swift */,
+				3EAB14022768D52B0042E829 /* EditorToolsView.swift */,
+				3EAB14132768E6170042E829 /* FigureToolsView.swift */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		3EE64811276E054D00BCF868 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3EE64807276DFC3100BCF868 /* API.swift */,
+				3EE64812276E055A00BCF868 /* UserManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		4448F4B1FBE373008CC93AE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				254F760A6D0B03208B8AC025 /* Pods_PixelEditor.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA18457F3263E1A3D73620C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C217ECCFF9E75B381CD76C04 /* Pods-PixelEditor.debug.xcconfig */,
+				BEF95ADD48BB0D1CDD88CF24 /* Pods-PixelEditor.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +232,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3EAB13E52768BB150042E829 /* Build configuration list for PBXNativeTarget "PixelEditor" */;
 			buildPhases = (
+				EAF439D8536CFFB103CE8125 /* [CP] Check Pods Manifest.lock */,
 				3EAB13CD2768BB140042E829 /* Sources */,
 				3EAB13CE2768BB140042E829 /* Frameworks */,
 				3EAB13CF2768BB140042E829 /* Resources */,
+				D6C5434DE9E007F7E6EFFC27 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,34 +286,94 @@
 			files = (
 				3EAB13E12768BB150042E829 /* LaunchScreen.storyboard in Resources */,
 				3EAB13DE2768BB150042E829 /* Assets.xcassets in Resources */,
-				3EAB13DC2768BB140042E829 /* Main.storyboard in Resources */,
+				3EE64815276E0C9E00BCF868 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D6C5434DE9E007F7E6EFFC27 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PixelEditor/Pods-PixelEditor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PixelEditor/Pods-PixelEditor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PixelEditor/Pods-PixelEditor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAF439D8536CFFB103CE8125 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PixelEditor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3EAB13CD2768BB140042E829 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EAB13D92768BB140042E829 /* ViewController.swift in Sources */,
+				3EAB13E92768BD260042E829 /* ArtsViewController.swift in Sources */,
+				3EE6481B276F5F2500BCF868 /* Typealias.swift in Sources */,
+				3EE64808276DFC3100BCF868 /* API.swift in Sources */,
+				3EE6481D276F60DD00BCF868 /* ArtTableView.swift in Sources */,
+				3EAB14142768E6170042E829 /* FigureToolsView.swift in Sources */,
+				3EE64819276F5E8000BCF868 /* ArtCell.swift in Sources */,
+				3EE6480C276E044A00BCF868 /* AutorizationViewController.swift in Sources */,
+				3EE64810276E04D100BCF868 /* StateTextField.swift in Sources */,
+				3E5A47C9276FBF310078567E /* LoadingState.swift in Sources */,
+				3E59ECA82769286900A6A7CA /* ColorPickerViewController.swift in Sources */,
+				3EE64813276E055A00BCF868 /* UserManager.swift in Sources */,
+				3EAB14092768D6D90042E829 /* Design.swift in Sources */,
+				3E907FE227723ED500CFC1AA /* AddArtViewController.swift in Sources */,
+				3E59ECAA276928D200A6A7CA /* Extensions.swift in Sources */,
+				3EAB13F52768BE2E0042E829 /* ArtsCollectionView.swift in Sources */,
+				3EAB13FD2768C46D0042E829 /* Art.swift in Sources */,
+				3EE6480E276E04A500BCF868 /* DescTextFieldView.swift in Sources */,
+				3EE6480A276DFC9E00BCF868 /* User.swift in Sources */,
 				3EAB13D52768BB140042E829 /* AppDelegate.swift in Sources */,
-				3EAB13D72768BB140042E829 /* SceneDelegate.swift in Sources */,
+				3EAB13F92768C0BA0042E829 /* SettingsViewController.swift in Sources */,
+				3E907FE4277242CD00CFC1AA /* BackNavigationController.swift in Sources */,
+				3EAB140B2768D6E20042E829 /* Icons.swift in Sources */,
+				3EAB14032768D52B0042E829 /* EditorToolsView.swift in Sources */,
+				3EAB14072768D6D50042E829 /* Colors.swift in Sources */,
+				3EAB14012768D4630042E829 /* StackListView.swift in Sources */,
+				3EAB14172768EE520042E829 /* Figures.swift in Sources */,
+				3EAB13FB2768C4540042E829 /* EditorViewController.swift in Sources */,
+				3EAB14052768D5960042E829 /* ToolView.swift in Sources */,
+				3EAB13FF2768C5660042E829 /* CanvasView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3EAB13DA2768BB140042E829 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3EAB13DB2768BB140042E829 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3EAB13DF2768BB150042E829 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -283,39 +503,43 @@
 		};
 		3EAB13E62768BB150042E829 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C217ECCFF9E75B381CD76C04 /* Pods-PixelEditor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R24W57U338;
 				INFOPLIST_FILE = PixelEditor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Jeytery.PixelEditor;
+				PRODUCT_BUNDLE_IDENTIFIER = Barsik.PixelEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		3EAB13E72768BB150042E829 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEF95ADD48BB0D1CDD88CF24 /* Pods-PixelEditor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R24W57U338;
 				INFOPLIST_FILE = PixelEditor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Jeytery.PixelEditor;
+				PRODUCT_BUNDLE_IDENTIFIER = Barsik.PixelEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
